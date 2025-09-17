@@ -1,3 +1,6 @@
+
+
+
 print("welcome to calculator")
 
 
@@ -5,6 +8,7 @@ print("1. Addition")
 print("2. Subtraction")
 print("3. Multiplication")
 print("4. Division")
+print("5. quit")
 
 math =input("enter your math:")
 
@@ -39,9 +43,6 @@ elif math == "Division":
     b=int(b)
     quotient=a/b 
     print(f"the quotient {a} / {b} = {quotient}")
-    
 
-
-
-
-
+elif math == "quit":
+            check = True
