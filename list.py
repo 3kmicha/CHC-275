@@ -15,3 +15,6 @@ for num in mylist:
     num = num + 5
 
 print(mylist)
+
+for i in range(len(mylist)):
+    mylist[i] = mylist[i] + 5
