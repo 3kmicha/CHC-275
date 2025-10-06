@@ -1,18 +1,59 @@
-print("Welcome to First Financial Credit Union!")
-print("What would you like to do today?")
-print("1. Deposit")
-print("2. Withdraw")
-print("3. Transfer")
-print("4. List All Accounts")
-print("5. Add Account")
-print("6. Remove Account")
-
-
-
-action =input(":")
-
 actnames = ["Micha"]
 actbalance = [1,000]
+check = False
+while check == False:
+        print("Welcome to First Financial Credit Union!")
+
+        print("1. Deposit")
+        print("2. Withdraw")
+        print("3. Transfer")
+        print("4. List All Accounts")
+        print("5. Add Account")
+        print("6. Remove Account")
+        action = input("What would you like to do today?:")
+        
+        if action == "Deposit":
+            actname = input("Which account would like to Deposit into?:")
+            money = input("how much would you like to Deposit?:")
+            money= int(money)
+            index= actnames.index(actname)
+            actbalance[index] = actbalance[index] + money
+            print("Thank you for banking with First Financial Credit Union! Have a wonderful day!" )
+            
+    
+            
+        elif action == "Withdraw":
+            actname = input("Which account would like to Withdraw from?:")
+            money = input("How much would you like to Withdraw?:")
+            money= int(money)
+            index= actnames.index(actname)
+            actbalance[index] = actbalance[index] - money
+            print("Thank you for banking with First Financial Credit Union! Have a wonderful day!" )
+            
+        elif action == "Transfer":
+            print("option 3")
+            
+        elif action == "List All Accounts":
+            print("option 3")
+            
+        elif action == "Add Account":
+            print("option 3")
+            
+        elif action == "Remove Account":
+            print("option 3")
+            
+        elif action == "quit":
+            check = True
+    
+
+
+
+
+
+
+
+
+
 
 
 for i in range(len(actnames)):
