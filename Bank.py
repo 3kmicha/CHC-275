@@ -1,6 +1,7 @@
 actnames = ["Micha"]
-actbalance = [1,000]
-check = False
+actbalances = [1,000]
+
+heck = False
 while check == False:
         print("Welcome to First Financial Credit Union!")
 
@@ -10,6 +11,7 @@ while check == False:
         print("4. List All Accounts")
         print("5. Add Account")
         print("6. Remove Account")
+        
         action = input("What would you like to do today?:")
         
         if action == "Deposit":
@@ -17,7 +19,7 @@ while check == False:
             money = input("how much would you like to Deposit?:")
             money= int(money)
             index= actnames.index(actname)
-            actbalance[index] = actbalance[index] + money
+            actbalances[index] = actbalances[index] + money
             print("Thank you for banking with First Financial Credit Union! Have a wonderful day!" )
             
     
@@ -27,17 +29,24 @@ while check == False:
             money = input("How much would you like to Withdraw?:")
             money= int(money)
             index= actnames.index(actname)
-            actbalance[index] = actbalance[index] - money
+            actbalances[index] = actbalances[index] - money
             print("Thank you for banking with First Financial Credit Union! Have a wonderful day!" )
             
         elif action == "Transfer":
-            print("option 3")
+            actname = input("Which account would like to Transfer from?:")
+            actname2 = input("Which account would like to Transfer to?:")
+            money = input("how much would you like to Transfer?:")
+            money= int(money)
+            index= actnames.index(actname)
+            index2 = actnames.index(actname2)
+            actbalances[index] = actbalances[index] - money
+            actbalances[index2] = actbalances[index2] + money
+            print("Thank you for banking with First Financial Credit Union! Have a wonderful day!" )
             
         elif action == "List All Accounts":
-            print("option 3")
+            print(actnames)
             
         elif action == "Add Account":
-            print("option 3")
             
         elif action == "Remove Account":
             print("option 3")
