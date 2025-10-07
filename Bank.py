@@ -1,7 +1,7 @@
 actnames = ["Micha"]
 actbalances = [1,000]
 
-heck = False
+check = False
 while check == False:
         print("Welcome to First Financial Credit Union!")
 
@@ -44,12 +44,19 @@ while check == False:
             print("Thank you for banking with First Financial Credit Union! Have a wonderful day!" )
             
         elif action == "List All Accounts":
-            print(actnames)
+            print(len(actnames))
             
         elif action == "Add Account":
-            
+          actname = input("Which account would like to Add?:")
+          actnames.append(actname)
+          actbalances.append(0)
+          
         elif action == "Remove Account":
-            print("option 3")
+            actname = input("Which account would like to Remove?:")
+            index= actnames.index(actname)
+            actnames.pop(index) 
+            actbalances.pop(index)
+            print("Thank you for banking with First Financial Credit Union! Have a wonderful day!" )
             
         elif action == "quit":
             check = True
@@ -65,5 +72,3 @@ while check == False:
 
 
 
-for i in range(len(actnames)):
-    print (f"Bank records for {actnames[i]}, actbalance: {actbalance[i]}")
