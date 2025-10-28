@@ -1,5 +1,6 @@
-
-
+small = []
+medium = []
+large = []
 
 check = False
 while check == False:
@@ -12,16 +13,19 @@ while check == False:
             
     if option.isnumeric():
         option = int(option)
-        print("That is not a number!")
-            
-    elif option <= "100":
+        
+    if option <= 100:
+        small.append
         print("You have a small Mushroom")
         
-    elif option > "100" and option < "200":
-            print("You have a medium Mushroom")
+    elif option > 100 and option < 200:
+        medium.append
+        print("You have a medium Mushroom")
             
-    elif option >= "200":
-            print("You have a large Mushroom")
+    elif option >= 200:
+        large.append
+        print("You have a large Mushroom")
             
-    elif option == "stop":
-            check = True
+    else:
+        print("That is not a number!")
+   

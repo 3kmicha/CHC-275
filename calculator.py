@@ -26,9 +26,4 @@ b=int(b)
 quotient=a-b 
 print(f"the quotient {a} / {b} = {quotient}")
 
-
-print("welcome to calculator")
-print("1. Addition")
-print("2. Subtraction")
-print("3. Multiplication")
-print("4. Division")
+10123132*2
