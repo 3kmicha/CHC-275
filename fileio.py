@@ -28,3 +28,4 @@ buffer[-1] = buffer[-1].strip()
 
 file.writelines(buffer)
 file.close
+
