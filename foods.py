@@ -23,18 +23,28 @@ while check == False:
     print("Welcome to the Grocery Store!")
 
     print("1. add to cart")
-    print("2. remove items")
-    print("3. check out")
+    print("2. check out")
     action = input("What would you like to do today?:").strip().lower()
         
     if action == "add to cart":
         print(food)
-        option = input("What do you want?")
-        option = int()
-        qunatity = input("How much would you like?")
-        total = total + int(qunatity) * price[option]
+        try:
+            option = input("What do you want?")
+            option = int(option)
+            qunatity = input("How much would you like?")
+            qunatity = int(qunatity)
+
+
+            total = total + (qunatity) * price[option]
+            print(total)
+        except Exception as e:
+            print(e)
+            
+    
         
     if action == "check out":
+        tax = total * 0.06
+        total = total + tax
         print("You're total is:") 
         print(total)
         print("Thank you for shopping with us!")
