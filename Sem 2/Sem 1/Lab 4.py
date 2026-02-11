@@ -5,11 +5,14 @@ def makeList():
     check = False
     while check == False:
         option = input("Enter a list of intergers or 'q' to end the lsit:")
-        if option == "quit".lower():
+        if option == "q".lower():
             check = True
         else: 
-            option = int(option)
-            nums.append(option)
+            try:
+                option = int(option)
+                nums.append(option)
+            except ValueError:
+                print("Sorry you must type in an interger :(")
     return(nums)
 
 def printMenu():
@@ -19,7 +22,8 @@ def printMenu():
     print("3. Mean")
     print("4. Median")
     print("5. Clear List")
-""""""    
+    print("6. q")
+   
 
 
 """
@@ -29,7 +33,12 @@ Return Type: Float
 Description: Calculates the mean for the list and returns the value 
 """
 def getMean(userList):
-    pass
+    sum = 0
+    userList = []
+    for num in userList:
+        sum = sum + num
+    mean = sum / len(userList)
+    print(mean)
 
 """
 Function Name: getMedian
@@ -39,6 +48,12 @@ Description: Calculates the median for the list and returns the value
 """
 def getMedian(userList):
     userList = sorted(userList)
+    n = len(userList)
+    if n % 2 == 1:
+        
+        middle_index = n // 2
+        return userList[middle_index]
+    else: middle_index
 
 """ 
 Function Name: getMin
@@ -47,8 +62,13 @@ Return Type: Float
 Description: Finds the minimum of the unsorted list
 """
 def getMin(userList):
-    pass
-
+     userList = []
+     smallest = userList[0]
+     for userList in userList:
+         if userList < smallest:
+            smallest = userList
+     return smallest
+    
 """ 
 Function Name: getMax
 Parameters: List
@@ -76,9 +96,29 @@ def main():
     check = False
     while check == False:
         printMenu()
-        option = input("Select what you want top do:")
-        if option == "q":
+        option = input("Select what you want to Calculate:")
+        if option.lower() == "q":
             check = True
+        if option == "1":
+            min = getMin(list1)
+            print(f"You're Min is {min}")
+        elif option == "2":
+            max = getMax(list1)
+            print(f"You're Max is {max}")
+        
+        elif option == "3":
+            mean = getMean(list1)
+            print(f"You're Mean is {mean}")
+            
+        elif option == "4":
+            median = getMedian(list1)
+            print(f"You're Median is {median}")
+            
+        elif option == "5":
+            pass
+        
+        else: print()
+        
 
 
 if __name__ == "__main__":
