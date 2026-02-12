@@ -21,8 +21,7 @@ def printMenu():
     print("2. Max")
     print("3. Mean")
     print("4. Median")
-    print("5. Clear List")
-    print("6. q")
+    print("5. q")
    
 
 
@@ -34,11 +33,10 @@ Description: Calculates the mean for the list and returns the value
 """
 def getMean(userList):
     sum = 0
-    userList = []
     for num in userList:
         sum = sum + num
     mean = sum / len(userList)
-    print(mean)
+    return mean
 
 """
 Function Name: getMedian
@@ -49,11 +47,15 @@ Description: Calculates the median for the list and returns the value
 def getMedian(userList):
     userList = sorted(userList)
     n = len(userList)
-    if n % 2 == 1:
+    if n % 2 == 1: 
         
         middle_index = n // 2
         return userList[middle_index]
-    else: middle_index
+    else: 
+        middle_index = n // 2
+        lower_index = middle_index -1 
+        average = (userList[middle_index] + userList[lower_index]) / 2
+        return average
 
 """ 
 Function Name: getMin
@@ -62,11 +64,10 @@ Return Type: Float
 Description: Finds the minimum of the unsorted list
 """
 def getMin(userList):
-     userList = []
      smallest = userList[0]
-     for userList in userList:
-         if userList < smallest:
-            smallest = userList
+     for num in userList:
+         if num < smallest:
+            smallest = num
      return smallest
     
 """ 
@@ -76,7 +77,11 @@ Return Type: Float
 Description: Finds the maximum of the unsorted list
 """
 def getMax(userList):
-    pass
+    biggest = userList[0]
+    for num in userList:
+         if num > biggest:
+            biggest = num
+    return num
 
 """ 
 Function Name: getStdDev
@@ -114,8 +119,6 @@ def main():
             median = getMedian(list1)
             print(f"You're Median is {median}")
             
-        elif option == "5":
-            pass
         
         else: print()
         
