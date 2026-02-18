@@ -21,7 +21,8 @@ def printMenu():
     print("2. Max")
     print("3. Mean")
     print("4. Median")
-    print("5. q")
+    print("5. StdDev")
+    print("6. q ")
    
 
 
@@ -90,7 +91,12 @@ Return Type: none
 Description: Calculates the population Standard Deviation of a list
 """
 def getStdDev(userList):
-    pass
+    SSE = 0
+    mean = getMean(userList)
+    for num in userList:
+        SSE = SSE + (num - mean)**2
+    SSE = SSE / len(userList) 
+    return math.sqrt(SSE)
 
 
 
@@ -118,6 +124,9 @@ def main():
         elif option == "4":
             median = getMedian(list1)
             print(f"You're Median is {median}")
+        elif option == "5":
+            SSE = getStdDev(list1)
+            print(f"You're Standard Deviation is {SSE}")
             
         
         else: print()
