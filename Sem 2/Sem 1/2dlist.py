@@ -15,7 +15,7 @@
     [0,0,0,0,0],
     [0,0,0,0,0],
 ]
-#- Square bracktes are used to get a singel elemnt out of a list
+# Square bracktes are used to get a singel elemnt out of a list
 # This a naturaL thing to becaus ething slike 
 
 print(grid[0][0])
@@ -59,6 +59,7 @@ board = [
     [0,0,0],
     [0,0,0],
 ]
+current_player = "O"
 
 print(board)
 
@@ -68,5 +69,22 @@ def printBoard(board):
             print("|", end ="")
             print(board[i][j], end = "|")
         print()
-    printBoard(board)
+printBoard(board)
             
+def printplaceMaker(board,current_player,row,col):
+    board[row][col] = current_player # it replaces the x y cordinate inside our board with the current player 
+    #problem with this is that we dont check to see if the postion is an open sqaure 
+    if board[row][col] == 0:
+        pass
+    else:
+        print("Sorry that spot is taken")
+        
+def printswitchplayer(current_player):  
+    if current_player == "0":
+        return "X"
+    elif current_player == "X":
+        return "O"
+
+def printcheckWinner(board, current_player):
+    for i in range(len(board)):
+       pass
