@@ -88,3 +88,10 @@ def printswitchplayer(current_player):
 def printcheckWinner(board, current_player):
     for i in range(len(board)):
        pass
+   
+    for row in board:
+        for space in row:
+            if space == 0: 
+                return False
+
+    return True
