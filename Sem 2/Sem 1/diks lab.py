@@ -57,7 +57,7 @@ def getStudentEmail(directory,student):
         Description:
             A Function that returns a string of the student's email at dictionary[student]
     """
-    pass
+    email = input("What is the students email?")
 
 def getStudentsByGradeLevel(directory, gradelevel):
     """
@@ -69,7 +69,8 @@ def getStudentsByGradeLevel(directory, gradelevel):
         Description:
             procedure that prints out all of the students of a corresponding grade level.
     """
-    pass
+    gradelevel = int(input("What is the students Grade Level"))
+    
 
 def addStudent(directory):
     """
@@ -80,7 +81,7 @@ def addStudent(directory):
         Description:
             procedure that adds a student with the following values: <dict> grades, <int> grade level, <string> email to the <dict>directory
     """
-    pass
+    name = input("What is the students name?")
 
 def removeStudent(directory, student):
     """
@@ -92,7 +93,7 @@ def removeStudent(directory, student):
         Description:
             procedure that removes the student at directory[student]
     """
-    pass
+    name = input("What is the students email?")
 
 def updateGrade(directory, student):
     """
@@ -135,7 +136,7 @@ def checkHonorRoll(directory,student):
 
 def printMenu():
     
-    print("1. Welcome to Calvert Hall's Student Directory")
+    
     print("2. Add Student")
     print("3. Remove Student")
     print("4. Get Student")
@@ -146,10 +147,31 @@ def printMenu():
     
     
     
+    
+    
 def main():
-    #TODO: Implement every function in main
     Students = {}
-    print(printMenu)
+    print("1. Welcome to Calvert Hall's Student Directory")
+    check = False
+    while check == False:
+        printMenu()
+        option = input("Please make a selection:")
+        if option.strip() == "8":
+            print("You have left the chat! ")
+            check = True
+        if option == "2":
+            name = addStudent(directory)
+        if option == "3":
+            pass
+        if option == "4":
+            pass
+        if option == "5":
+            pass
+        if option == "6":
+            pass
+        if option == "7":
+            gradelevel = getStudentsByGradeLevel(directory, gradelevel)
+            print()
 
 if __name__ == "__main__":
     main()
