@@ -69,19 +69,18 @@ def getStudentsByGradeLevel(directory, gradelevel):
         Description:
             procedure that prints out all of the students of a corresponding grade level.
     """
-    gradelevel = int(input("What is the students Grade Level"))
+    
     
 
 def addStudent(directory):
-    """
-        Function Name: addStudent
-        Parameters:
-            Directory <dict> : Student Directory that is specified in the main() function
-            Return Type:  none
-        Description:
-            procedure that adds a student with the following values: <dict> grades, <int> grade level, <string> email to the <dict>directory
-    """
-    name = input("What is the students name?")
+    name = input("What is the students name?").strip().lower()
+    email = input("What is the students email?").strip().lower()
+    gradelevel = int(input("What is the students Grade Level"))
+    grades = {"History": int(input("What is the History Grade?")), "English": int(input("What is the English Grade?")), "Math": int(input("What is the Math Grade?")), "Religion": int(input("What is the Religion Grade?"))}
+    directory [name] = {"email": email, "gradelevel": gradelevel, "grades": grades}
+    
+    
+   
 
 def removeStudent(directory, student):
     """
@@ -93,7 +92,7 @@ def removeStudent(directory, student):
         Description:
             procedure that removes the student at directory[student]
     """
-    name = input("What is the students email?")
+    
 
 def updateGrade(directory, student):
     """
@@ -157,10 +156,11 @@ def main():
         printMenu()
         option = input("Please make a selection:")
         if option.strip() == "8":
-            print("You have left the chat! ")
+            print("You have exited Calvert Hall's Student Directory")
             check = True
         if option == "2":
-            name = addStudent(directory)
+            addStudent(Students)
+            print(Students)
         if option == "3":
             pass
         if option == "4":
