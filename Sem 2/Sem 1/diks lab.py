@@ -83,15 +83,7 @@ def addStudent(directory):
    
 
 def removeStudent(directory, student):
-    """
-        Function Name: removeStudent
-        Parameters:
-            Directory <dict> : Student Directory that is specified in the main() function
-            student <String> : String that corresponds to the student name
-            Return Type:  none
-        Description:
-            procedure that removes the student at directory[student]
-    """
+    directory.pop(student)
     
 
 def updateGrade(directory, student):
@@ -162,7 +154,7 @@ def main():
             addStudent(Students)
             print(Students)
         if option == "3":
-            pass
+            removeStudent(directory, student)
         if option == "4":
             pass
         if option == "5":
@@ -170,8 +162,7 @@ def main():
         if option == "6":
             pass
         if option == "7":
-            gradelevel = getStudentsByGradeLevel(directory, gradelevel)
-            print()
+            pass
 
 if __name__ == "__main__":
     main()
